@@ -1,17 +1,8 @@
 
-from flask import Flask, jsonify, request, abort, render_template
+from flask import Flask, jsonify, request, abort
 from carDAO import carDAO
 
-app = Flask(__name__, static_url_path='', static_folder='.')
-
-app = Flask(__name__)
-
-@app.route('/cars')
-def home():
-    return render_template('car.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
+app = Flask(__name__, static_url_path='', static_folder='car.html')
 
 
 #app = Flask(__name__)
