@@ -1,3 +1,4 @@
+
 from flask import Flask, jsonify, request, abort
 from carDAO import carDAO
 
@@ -59,7 +60,7 @@ def update(id):
         foundCar['model'] = reqJson['model']
     if 'price' in reqJson:
         foundCar['price'] = reqJson['price']
-    values = (foundCar['name'],foundCar['model'],founCar['price'],foundCar['id'])
+    values = (foundCar['name'],foundCar['model'],foundCar['price'],foundCar['id'])
     carDAO.update(values)
     return jsonify(foundCar)
         
