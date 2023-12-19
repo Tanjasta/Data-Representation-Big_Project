@@ -1,8 +1,18 @@
 
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request, abort, render_template
 from carDAO import carDAO
 
 app = Flask(__name__, static_url_path='', static_folder='.')
+
+app = Flask(__name__)
+
+@app.route('/cars')
+def home():
+    return render_template('car.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
 
 #app = Flask(__name__)
 
@@ -24,7 +34,7 @@ def findById(id):
 
     return jsonify(foundCar)
 
-#curl  -i -H "Content-Type:application/json" -X POST -d "{\"title\":\"hello\",\"author\":\"someone\",\"price\":123}" http://127.0.0.1:5000/books
+#curl  -i -H "Content-Type:application/json" -X POST -d "{\"title\":\"hello\",\"author\":\"someone\",\"price\":123}" http://127.0.0.1:5000/cars
 @app.route('/cars', methods=['POST'])
 def create():
     
@@ -41,7 +51,7 @@ def create():
     car['id'] = newId
     return jsonify(car)
 
-#curl  -i -H "Content-Type:application/json" -X PUT -d "{\"title\":\"hello\",\"author\":\"someone\",\"price\":123}" http://127.0.0.1:5000/books/1
+#curl  -i -H "Content-Type:application/json" -X PUT -d "{\"title\":\"hello\",\"author\":\"someone\",\"price\":123}" http://127.0.0.1:5000/cars/1
 @app.route('/cars/<int:id>', methods=['PUT'])
 def update(id):
     foundCar = carDAO.findByID(id)
@@ -54,9 +64,9 @@ def update(id):
     if 'price' in reqJson and type(reqJson['price']) is not int:
         abort(400)
 
-    if 'title' in reqJson:
+    if 'name' in reqJson:
         foundCar['name'] = reqJson['name']
-    if 'Model' in reqJson:
+    if 'model' in reqJson:
         foundCar['model'] = reqJson['model']
     if 'price' in reqJson:
         foundCar['price'] = reqJson['price']

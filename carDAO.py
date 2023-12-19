@@ -7,6 +7,8 @@ class carDAO:
     user=       ''
     password=   ''
     database=   ''
+
+
     
     def __init__(self):
         self.host=       cfg.mysql['host']
