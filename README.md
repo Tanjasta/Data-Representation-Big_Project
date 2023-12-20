@@ -1,5 +1,5 @@
 ## Data-Representation-Big_Project
-Data-Representation-Big_Project
+
 
 ### Introduction
 
@@ -28,29 +28,29 @@ Virtual Environment (venv)
 
 ### Setting up a Virtual Environment
 
-###### Create a Virtual Environment:
+#### Create a Virtual Environment:
 
 python -m venv venv
 
-###### Activate the Virtual Environment: 
+#### Activate the Virtual Environment: 
 
 On Windows: venv\Scripts\activate
 
 On Unix or MacOS: source venv/bin/activate
 
-###### Install Dependencies:
+#### Install Dependencies:
 
 pip install flask mysql-connector
 
 ### Running the Application
 
-###### Start the Flask Server:
+#### Start the Flask Server:
 
 python a_server.py
 
 This command runs the Flask server, making the application accessible on http://127.0.0.1:5000/.
 
-###### Access the Car Viewer:
+#### Access the Car Viewer:
 Open a web browser and navigate to http://127.0.0.1:5000/ to use the car viewer interface.
 
 ### Dependencies
