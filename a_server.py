@@ -1,15 +1,15 @@
 
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request, abort, send_from_directory
 from carDAO import carDAO
 
 app = Flask(__name__, static_url_path='', static_folder='.')
 
 
 #app = Flask(__name__)
+@app.route('/')
+def index():
+    return send_from_directory(app.static_folder, 'carviewer.html')
 
-#@app.route('/')
-#def index():
-#    return "Hello, World!"
 
 #curl "http://127.0.0.1:5000/cars"
 @app.route('/cars')
