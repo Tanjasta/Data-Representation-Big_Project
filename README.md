@@ -3,10 +3,7 @@
 
 ### Introduction
 
-Create a Web application in Flask that has a RESTful API, the application
-should link to one or more database tables.
-You should also create the web pages that can consume the API. I.e. performs
-CRUD operations on the data.
+This project was developed as a part of the Data Representation module for the Higher Diploma in Science in Data Analytics course. The primary task of this project is to create a Web application using Flask, featuring a RESTful API. This application is designed to interface with one or more database tables, with a key focus on its ability to perform CRUD (Create, Read, Update, Delete) operations on the data. The user-friendly web interface not only displays the data but also enables user interaction, leveraging the capabilities of the RESTful API for efficient data handling.
 
 ### Features
 
