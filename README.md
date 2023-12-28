@@ -65,3 +65,14 @@ jQuery
 
 Bootstrap
 
+### References
+
+https://github.com/andrewbeattycourseware/datarepresentation/blob/main/code/Topic10-server1linktoDB.py/server1.py
+
+https://github.com/andrewbeattycourseware/datarepresentation/blob/main/code/Topic10-server1linktoDB.py/bookviewer.html
+
+https://github.com/andrewbeattycourseware/datarepresentation/blob/main/code/Topic10-server1linktoDB.py/bookDAO.py
+
+https://vlegalwaymayo.atu.ie/course/view.php?id=8683
+
+https://atlantictu-my.sharepoint.com/personal/andrew_beatty_atu_ie/_layouts/15/stream.aspx?id=%2Fpersonal%2Fandrew%5Fbeatty%5Fatu%5Fie%2FDocuments%2Fdatarepresentation2023%20%28private%29%2Fvideos%2Fdr11%2E1%2Dpythonanywhere%2Emp4&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview
