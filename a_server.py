@@ -1,3 +1,4 @@
+#Code reference: https://github.com/andrewbeattycourseware/datarepresentation/blob/main/code/Topic10-server1linktoDB.py/server1.py
 
 from flask import Flask, jsonify, request, abort, send_from_directory
 from carDAO import carDAO
@@ -5,27 +6,28 @@ from carDAO import carDAO
 app = Flask(__name__, static_url_path='', static_folder='.')
 
 
-#app = Flask(__name__)
+# Route to serve the main page of the web app. 
+# Serve a static HTML file, 'carviewer.html'.
 @app.route('/')
 def index():
     return send_from_directory(app.static_folder, 'carviewer.html')
 
 
-#curl "http://127.0.0.1:5000/cars"
+# Route to get all cars.
 @app.route('/cars')
 def getAll():
-    #print("in getall")
+    # Retrieve all cars from the database using the carDAO.
     results = carDAO.getAll()
     return jsonify(results)
 
-#curl "http://127.0.0.1:5000/cars/2"
+# Route to find a car by its ID.
 @app.route('/cars/<int:id>')
 def findById(id):
     foundCar = carDAO.findByID(id)
 
     return jsonify(foundCar)
 
-#curl  -i -H "Content-Type:application/json" -X POST -d "{\"title\":\"hello\",\"author\":\"someone\",\"price\":123}" http://127.0.0.1:5000/cars
+# Route to create a new car entry.
 @app.route('/cars', methods=['POST'])
 def create():
     
@@ -42,7 +44,7 @@ def create():
     car['id'] = newId
     return jsonify(car)
 
-#curl  -i -H "Content-Type:application/json" -X PUT -d "{\"title\":\"hello\",\"author\":\"someone\",\"price\":123}" http://127.0.0.1:5000/cars/1
+# Route to update car's details.
 @app.route('/cars/<int:id>', methods=['PUT'])
 def update(id):
     foundCar = carDAO.findByID(id)
@@ -67,7 +69,7 @@ def update(id):
         
 
     
-
+# Route to delete a car by its ID.
 @app.route('/cars/<int:id>' , methods=['DELETE'])
 def delete(id):
     carDAO.delete(id)
